@@ -1,9 +1,9 @@
-import { useAtom } from "jotai";
+import { useAtomValue } from "jotai";
 import { searchRecordAtom } from "../stores/atom";
 
 export default function SideBar() {
   // use 'useAtom' to read and write to the atom
-  const [searchRecords, setSearchRecords] = useAtom(searchRecordAtom);
+  const searchRecords = useAtomValue(searchRecordAtom);
   const reversedSearchRecords = [...searchRecords].reverse();
   return (
     <div>
