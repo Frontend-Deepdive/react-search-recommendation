@@ -1,0 +1,54 @@
+{
+  "recommendations": [
+    {
+      "query": "fe",
+      "suggestions": [
+        "frontend development",
+        "fe framework",
+        "fe interview questions",
+        "fe tools",
+        "fe roadmap 2023"
+      ]
+    },
+    {
+      "query": "react",
+      "suggestions": [
+        "react hooks",
+        "react state management",
+        "react performance optimization",
+        "react testing library",
+        "react vs vue"
+      ]
+    },
+    {
+      "query": "javascript",
+      "suggestions": [
+        "javascript es6",
+        "javascript async/await",
+        "javascript array methods",
+        "javascript closures",
+        "javascript event loop"
+      ]
+    },
+    {
+      "query": "css",
+      "suggestions": [
+        "css grid",
+        "css flexbox",
+        "css animations",
+        "css variables",
+        "css best practices"
+      ]
+    },
+    {
+      "query": "typescript",
+      "suggestions": [
+        "typescript basics",
+        "typescript generics",
+        "typescript vs javascript",
+        "typescript decorators",
+        "typescript utility types"
+      ]
+    }
+  ]
+}

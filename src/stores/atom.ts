@@ -1,5 +1,6 @@
 import { atom } from "jotai";
 import { observe } from "jotai-effect";
+import recommendData from "../mock/recommendData.json";
 
 export const currentSearchValAtom = atom<string>("");
 
@@ -28,4 +29,21 @@ observe((get, set) => {
   }
 
   set(searchRecordAtom, (prev) => [...prev, currentSearchVal]);
+});
+
+/**
+ * searchRecordAtom의 값을 기준으로 추천 검색어 derived atom 생성
+ */
+export const recommendedSearchValAtom = atom((get) => {
+  const currentSearchVal = get(currentSearchValAtom);
+
+  console.log("currentSearchVal-reco", currentSearchVal);
+  console.log("recommendData-row", recommendData.recommendations);
+  //추천 데이터에서 현재 검색어와 관련된 추천 검색어 필터링
+  const recommendation = recommendData.recommendations.find(
+    (item) => item.query.toLowerCase().trim() === currentSearchVal.toLowerCase()
+  );
+  console.log("recommendData!!!", recommendation);
+
+  return recommendation ? recommendation.suggestions : [];
 });

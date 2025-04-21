@@ -1,4 +1,6 @@
+import { useAtomValue } from "jotai";
 import { useState } from "react";
+import { recommendedSearchValAtom } from "../stores/atom";
 
 interface SearchBarProps {
   val: string;
@@ -6,8 +8,10 @@ interface SearchBarProps {
 }
 
 export default function SearchBar({ val, setVal }: SearchBarProps) {
-  const [searchVal, setSearchVal] = useState("");
+  const [searchVal, setSearchVal] = useState(""); // 검색어 상태
+  const recommendation = useAtomValue(recommendedSearchValAtom); // 추천 검색어
 
+  console.log(recommendation);
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault(); // form 기본 동작 방지
 
@@ -29,7 +33,14 @@ export default function SearchBar({ val, setVal }: SearchBarProps) {
         onChange={(e) => setSearchVal(e.target.value)}
         value={searchVal}
       />
-      <button type="submit">Search</button>
+      <div>
+        <ul>
+          {recommendation.map((item: string, index: number) => (
+            <li key={index}>{item}</li>
+          ))}
+        </ul>
+        <button type="submit">Search</button>
+      </div>
     </form>
   );
 }
