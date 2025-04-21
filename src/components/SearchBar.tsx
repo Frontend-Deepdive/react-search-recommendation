@@ -8,23 +8,21 @@ interface SearchBarProps {
 export default function SearchBar({ val, setVal }: SearchBarProps) {
   const [searchVal, setSearchVal] = useState("");
 
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault(); // form 기본 동작 방지
+    setVal(searchVal);
+    setSearchVal("");
+  };
+
   return (
-    <>
+    <form onSubmit={handleSubmit}>
       <input
         type="text"
         placeholder="Search..."
         onChange={(e) => setSearchVal(e.target.value)}
         value={searchVal}
       />
-      <button
-        type="submit"
-        onClick={() => {
-          setVal(searchVal);
-          setSearchVal("");
-        }}
-      >
-        Search
-      </button>
-    </>
+      <button type="submit">Search</button>
+    </form>
   );
 }
