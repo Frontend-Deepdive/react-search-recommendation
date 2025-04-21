@@ -11,7 +11,6 @@ export default function SearchBar({ val, setVal }: SearchBarProps) {
   const [searchVal, setSearchVal] = useState(""); // 검색어 상태
   const recommendation = useAtomValue(recommendedSearchValAtom); // 추천 검색어
 
-  console.log(recommendation);
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault(); // form 기본 동작 방지
 
