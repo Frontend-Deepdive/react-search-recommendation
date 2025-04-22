@@ -1,5 +1,6 @@
 import InputField from './components/InputField/InputField';
 import Sidebar from './components/Sidebar/Sidebar';
+import RecommendationList from './components/RecommendationList/RecommendationList';
 
 function App() {
   return (
@@ -7,6 +8,7 @@ function App() {
       <Sidebar />
       <div className='flex flex-col gap-4'>
         <InputField />
+        <RecommendationList />
       </div>
     </div>
   );
