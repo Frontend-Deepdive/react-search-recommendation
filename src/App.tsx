@@ -1,30 +1,8 @@
-import { useAtom } from "jotai";
-import "./App.css";
-import SearchBar from "./components/SearchBar";
-import { currentSearchValAtom } from "./stores/atom";
-import SideBar from "./components/SideBar";
-import styled from "styled-components";
+import './App.css';
+import Search from './pages/Search';
 
 function App() {
-  const [currentSearchVal, setCurrentSearchVal] = useAtom(currentSearchValAtom);
-
-  return (
-    <AppContainer>
-      <SideBar />
-      <SearchBar val={currentSearchVal} setVal={setCurrentSearchVal} />
-    </AppContainer>
-  );
+  return <Search />;
 }
-
-const AppContainer = styled.div`
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: flex-start;
-  gap: 20px;
-  padding: 20px;
-  background-color: #f1f3f5;
-  min-height: 100vh;
-`;
 
 export default App;

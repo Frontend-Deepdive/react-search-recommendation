@@ -1,7 +1,7 @@
-import { useAtomValue } from "jotai";
-import { useState } from "react";
-import { recommendedSearchValAtom } from "../stores/atom";
-import styled from "styled-components";
+import { useAtomValue } from 'jotai';
+import { useState } from 'react';
+import { recommendedSearchValAtom } from '../stores/atom';
+import styled from 'styled-components';
 
 interface SearchBarProps {
   val: string;
@@ -14,8 +14,13 @@ export default function SearchBar({ val, setVal }: SearchBarProps) {
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault(); // form 기본 동작 방지
+    if (searchVal.trim() === '') {
+      alert('검색어를 입력해주세요.'); // 빈 검색어 경고
+      return;
+    }
+    // 검색어가 비어있지 않으면 검색어 상태 업데이트
     setVal(searchVal);
-    setSearchVal(""); // 검색어 상태 초기화
+    setSearchVal(''); // 검색어 상태 초기화
   };
 
   return (

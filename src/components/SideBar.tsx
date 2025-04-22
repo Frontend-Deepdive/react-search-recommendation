@@ -1,6 +1,6 @@
-import { useAtomValue } from "jotai";
-import { searchRecordAtom } from "../stores/atom";
-import styled from "styled-components";
+import { useAtomValue } from 'jotai';
+import { searchRecordAtom } from '../stores/atom';
+import styled from 'styled-components';
 
 export default function SideBar() {
   const searchRecords = useAtomValue(searchRecordAtom);
@@ -8,7 +8,7 @@ export default function SideBar() {
 
   return (
     <SideBarContainer>
-      <Title>사이드바</Title>
+      <Title>검색 기록</Title>
       <RecordList>
         {reversedSearchRecords.map((item: string, index: number) => (
           <RecordItem key={index}>{item}</RecordItem>
