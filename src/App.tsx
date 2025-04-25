@@ -1,7 +1,8 @@
 import './App.css';
+import Search from './pages/Search';
 
 function App() {
-  return <div>this is me</div>;
+  return <Search />;
 }
 
 export default App;

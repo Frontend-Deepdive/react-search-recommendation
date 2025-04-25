@@ -1,0 +1,40 @@
+{
+  "recommendations": [
+    {
+      "query": "fe",
+      "suggestions": [
+        "frontend development",
+        "fe framework",
+        "fe interview questions"
+      ]
+    },
+    {
+      "query": "react",
+      "suggestions": [
+        "react hooks",
+        "react state management",
+        "react performance optimization"
+      ]
+    },
+    {
+      "query": "javascript",
+      "suggestions": [
+        "javascript es6",
+        "javascript async/await",
+        "javascript array methods"
+      ]
+    },
+    {
+      "query": "css",
+      "suggestions": ["css grid", "css flexbox", "css animations"]
+    },
+    {
+      "query": "typescript",
+      "suggestions": [
+        "typescript basics",
+        "typescript generics",
+        "typescript vs javascript"
+      ]
+    }
+  ]
+}
